@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayLessPest", "PayLessPest\PayLessPest.csproj", "{C9D6A7B6-C884-4D2A-B913-0DDE9F5BE4FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9D6A7B6-C884-4D2A-B913-0DDE9F5BE4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D6A7B6-C884-4D2A-B913-0DDE9F5BE4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D6A7B6-C884-4D2A-B913-0DDE9F5BE4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D6A7B6-C884-4D2A-B913-0DDE9F5BE4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40282097-4004-4201-8715-B0D92246051B}
+	EndGlobalSection
+EndGlobal
