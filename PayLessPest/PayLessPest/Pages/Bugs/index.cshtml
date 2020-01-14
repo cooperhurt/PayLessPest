@@ -4,5 +4,16 @@
     ViewData["Title"] = "index";
 }
 
-<h1>index</h1>
+@if (Model.currentBug != null)
+{
+    <div class="container">
+        <h1>@Model.currentBug.Name Pest Control</h1>
 
+    </div>
+}
+else
+{
+    <div class="container">
+        <h1>Common Bugs in Utah</h1>
+    </div>
+}
