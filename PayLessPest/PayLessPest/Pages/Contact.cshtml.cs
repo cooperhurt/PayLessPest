@@ -30,23 +30,12 @@ namespace PayLessPest
             reason = Request.Form["subject"];
 
             if (reason == "na")
-                reason = "general inquiry";
+                reason = "General Inquiry";
 
-            MailMessage message = new MailMessage(customerEmail, "setuprc1@gmail.com",customerName + " " + reason,userMessage);
-
-            SmtpClient client = new SmtpClient();
-
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.EnableSsl = true;
-            client.Host = "smtp.gmail.com";
-            client.Port = 587;
-            client.Credentials = new NetworkCredential("setuprc1@gmail.com", "567A;59AJh");
-
-
+            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason);
             try
             {
-                client.Send(message);
+                emailSend.send();
             }
             catch (Exception ex)
             {
