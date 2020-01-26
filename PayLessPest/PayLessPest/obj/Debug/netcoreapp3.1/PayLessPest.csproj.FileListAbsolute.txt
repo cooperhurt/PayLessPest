@@ -116,3 +116,5 @@ C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\ne
 C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp3.1\Razor\Pages\Coupons.cshtml.g.cs
 C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp3.1\Razor\Pages\quote.cshtml.g.cs
 C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp3.1\Razor\Pages\AboutUs.cshtml.g.cs
+C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp3.1\Razor\Pages\ServiceArea.cshtml.g.cs
+C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp3.1\Razor\Pages\Services\Domestic.cshtml.g.cs

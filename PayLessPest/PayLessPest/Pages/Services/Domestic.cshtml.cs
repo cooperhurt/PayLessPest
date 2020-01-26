@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PayLessPest
 {
-    public class businessModel : PageModel
+    public class DomesticModel : PageModel
     {
         public string customerEmail;
         public string customerName;
         public string customerPhone;
         public string reason;
         public string userMessage;
+
         public void OnGet()
         {
 

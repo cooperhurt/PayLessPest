@@ -1,7 +1,7 @@
 ﻿@page "/bugs"
 @model PayLessPest.indexModel
 @{
-    ViewData["Title"] = "index";
+    ViewData["Title"] = Model.currentBug == null ? "Common Bugs" : Model.currentBug.Name + " Pest Control";
 }
 
 @if (Model.currentBug != null)
@@ -13,7 +13,37 @@
 }
 else
 {
-    <div class="container">
-        <h1>Common Bugs in Utah</h1>
+    <div class="our_department_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-55">
+                        <h3>Common Bugs & Rodents Treated</h3>
+                        <p>
+                            All common bugs/Rodents in Utah
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var bug in Model.bugs)
+                {
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <a href="@Url.Page("index", new { bug = bug.Name })">
+                            <div class="single_department">
+                                <div class="department_thumb">
+                                    <img src="@bug.ImagePath" alt="@bug.Name">
+                                </div>
+                                <div class="department_content">
+                                    <h3><a href="@Url.Page("index", new { bug = bug.Name })">@bug.Name</a></h3>
+                                    <p>@bug.Descripition</p>
+                                    <a href="@Url.Page("index", new { bug = bug.Name })" class="learn_more">Learn More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 }

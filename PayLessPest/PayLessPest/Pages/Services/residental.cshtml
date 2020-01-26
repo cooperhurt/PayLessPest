@@ -1,59 +1,201 @@
-﻿@page
+﻿@page "/residental-pest-control-services"
 @model PayLessPest.residentalModel
 @{
-    ViewData["Title"] = "residental";
+    ViewData["Title"] = "Residnetal Services";
 }
+<div class="jumbotron">
+    <h1 class="display-3 text-center" style="padding-right: 0px;">Residnetal Pest Control Services</h1>
+    <p class="lead text-center"></p>
+    <p class="text-center"><a class="btn btn-lg btn-success" href="#contactForm" role="button">Request a Quote</a></p>
+</div>
+<div class="container">
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h4>Box Elder Bugs</h4>
+            <p>
+                <img src="~/img/bugs/boxElder/box-elder-bugs.jpg" height="128" width="128" style="">
+                <div>
+                    <a class="nav-link" href="/bugs?bug=Box%20Elder%20Bugs" style="background-color: rgb(236, 29, 59); margin-right: 5px; color: rgb(255, 255, 255);">Box Elder Bugs</a>
+                    Probably the most common season is summer, while they are harmless they can quickyl grow out of control. <br />
+                     <p class="btn btn-success">Learn more</p>
+                </div>
+            </p>
 
-    <div class="container">
-        <div class="row">
-            <div class="span3">
-                <div class="well">
-                    <h2 class="muted">Silver</h2>
-                    <p><span class="label">POPULAR</span></p>
-                    <ul>
-                        <li>10 users</li>
-                        <li>Unlimited access</li>
-                        <li>3TB of space</li>
-                        <li>E-mail support</li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                    <hr>
-                    <h3>$15.99 / month</h3>
-                    <hr>
-                    <p><a class="btn btn-large" href="#"><i class="icon-ok"></i> Select plan</a></p>
+        <h4>Subheading</h4>
+        <p>
+            <img src="https://bootsnipp.com/bootstrap-builder/libs/builder/icons/image.svg" height="128" width="128" style="">
+            <div>
+                <a class="nav-link" href="https://gogle.com2" style="background-color: rgb(236, 29, 59); margin-right: 5px; color: rgb(255, 255, 255);">Info2</a>
+                Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.<br />
+                <p class="btn btn-success">Learn more</p>
+            </div>
+         </p>
+
+    </div>
+
+<div class="col-lg-6">
+    <h4>Subheading</h4>
+    <p>
+        <img src="https://bootsnipp.com/bootstrap-builder/libs/builder/icons/image.svg" height="128" width="128" style="">
+        <div>
+            <a class="nav-link" href="https://gogle.com2" style="background-color: rgb(236, 29, 59); margin-right: 5px; color: rgb(255, 255, 255);">Info2</a>
+            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.<br />
+    <p class="btn btn-success">Learn more</p>
+
+</div>
+            </p>
+
+<h4>Subheading</h4>
+<p>
+    <img src="https://bootsnipp.com/bootstrap-builder/libs/builder/icons/image.svg" height="128" width="128" style="float: none;">
+    <div>
+        <a class="nav-link" href="https://gogle.com2" style="background-color: rgb(236, 29, 59); margin-right: 5px; color: rgb(255, 255, 255);">Info2</a>
+        Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+<p class="btn btn-success">Learn more</p>
+
+                </div>
+            </p>
+        </div>
+    </div>
+<h3 class="btn btn-outline-dark text-center">See other common bugs</h3>
+
+<div class="row pb-3 pt-3">
+    <div class="col-10 mx-auto">
+        <h3>Frequently Asked Questions</h3>
+        <div class="accordion" id="faqExample">
+            <div class="card">
+                <div class="card-header p-2" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Q: Do you have any coupons or promotions?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqExample">
+                    <div class="card-body">
+                        <b>Answer:</b> It depends on the time of the year but we always try to provide best pricing and services. We do occasionally offer promotions and coupons. <br><br>
+                        <a class="btn btn-success" href="/coupon-and-promos" role="button">Current Promotions and Coupons</a>
+                    </div>
                 </div>
             </div>
-            <div class="span3">
-                <div class="well">
-                    <h2 class="text-warning">Bronze</h2>
-                    <p><span class="label label-success">POPULAR</span></p>
-                    <ul>
-                        <li>20 users</li>
-                        <li>Unlimited access with no limits</li>
-                        <li>5TB of space</li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                    <hr>
-                    <h3>$10.99 / month</h3>
-                    <hr>
-                    <p><a class="btn btn-success btn-large" href="#"><i class="icon-ok"></i> Select plan</a></p>
+            <div class="card">
+                <div class="card-header p-2" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Q: How far out are you guys?
+                        </button>
+                    </h5>
                 </div>
-            </div>
-            <div class="span3">
-                <div class="well">
-                    <h2 class="text-info">Economy</h2>
-                    <p><span class="label label-info">BUDGET</span></p>
-                    <ul>
-                        <li>10 users</li>
-                        <li>5TB of space</li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                    <hr>
-                    <h3>$8.99 / month</h3>
-                    <hr>
-                    <p><a class="btn btn-large" href="#"><i class="icon-ok"></i> Select plan</a></p>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                    <div class="card-body">
+                        Depends on the time of the year, but typically we try to fit you into our schedule as soon as possible. Feel free to email us below, chat with us, or call us to see our soonest apopintment.
+                        <br />
+                        <a href="tel:801-809-7533" class="btn btn-info">Call us</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+
+<div class="jumbotron2 jumbotron-sm2">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Contact us <small>Feel free to contact us</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-8" id="contactForm">
+    <div class="well well-sm contactForm">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name" asp-for="customerName">
+                            Name
+                        </label>
+                        <input type="text" class="form-control" id="name" name="customerName" placeholder="Enter name" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name" asp-for="customerPhone">
+                            Phone:
+                        </label>
+                        <input type="text" class="form-control" id="name" name="customerName" placeholder="Enter name" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" asp-for="customerEmail">
+                            Email Address
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+                            <input type="email" class="form-control" id="email" name="customerEmail" placeholder="Enter email" required="required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">
+                            Subject
+                        </label>
+                        <select id="subject" name="subject" class="form-control" required="required" asp-for="reason">
+                            <option value="na" selected="">Choose One:</option>
+                            <option value="General Inquiry">General Customer Service</option>
+                            <option value="Request a Quote">Request a Quote</option>
+                            <option value="Service Question">Service Question</option>
+                            <option value="Other Question">Other Question</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">
+                            Preferred Contact Back
+                        </label>
+                        <select id="subject" name="subject" class="form-control" required="required" asp-for="reason">
+                            <option value="na" selected="">Choose One:</option>
+                            <option value="service">Phone call</option>
+                            <option value="suggestions">Email</option>
+                            <option value="product">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label for="name">
+                            Message
+                        </label>
+                        <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                  placeholder="Message" asp-for="userMessage"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                        Send Message
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<style>
+    .jumbotron2 {
+        background: #ec1d3b;
+        color: #FFF;
+        border-radius: 0px;
+        padding-top: 30px;
+    }
+
+    .jumbotron-sm2 {
+        padding-top: 24px;
+    }
+
+    .jumbotron2 small {
+        color: #FFF;
+    }
+</style>

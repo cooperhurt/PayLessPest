@@ -21,6 +21,7 @@ namespace PayLessPest.Models
         public string Name { get; set; }
 
         public string Descripition { get; set; }
+        public string ImagePath { get; set; }
 
         public List<string> CommonlyFound { get; set; }
         public List<string> tags { get; set; }
