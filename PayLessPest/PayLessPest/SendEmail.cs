@@ -16,7 +16,7 @@ namespace PayLessPest
         public string serviceType;
         public DateTime serviceDate;
 
-        public SendEmail(string? customerName,string customerEmail,string userMessage,string emailTitle,string serviceType = "", DateTime? serviceDate= null)
+        public SendEmail(string customerName,string customerEmail,string userMessage,string emailTitle,string serviceType = "", DateTime? serviceDate= null)
         {
 
             string sendTitle = serviceType == "" ? customerName + " " + emailTitle : customerName + " " + serviceType + " " + serviceDate + " " + emailTitle;

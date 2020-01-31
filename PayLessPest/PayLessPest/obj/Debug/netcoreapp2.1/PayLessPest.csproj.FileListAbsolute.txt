@@ -1,0 +1,3 @@
+C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp2.1\PayLessPest.csprojAssemblyReference.cache
+C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp2.1\PayLessPest.AssemblyInfoInputs.cache
+C:\Users\noret\Documents\GitHub\PayLessPest\PayLessPest\PayLessPest\obj\Debug\netcoreapp2.1\PayLessPest.AssemblyInfo.cs

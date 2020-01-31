@@ -1,287 +1,48 @@
 ﻿@page "/coupons-and-promos"
 @model PayLessPest.CouponsModel
 @{
-    ViewData["Title"] = "Coupons";
+    ViewData["Title"] = "Coupons and Promotions";
 }
-
+<style>
+    .mb.card-body{
+    text-align: center;
+}
+.mb.btn{
+    border-radius: 0;
+    box-shadow: 0.5px 1px 2px hsla(0, 0%, 20%, 1);
+}
+.mb.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 5px hsla(0, 0%, 20%, 1);
+}
+.mb.card{
+    border-radius: 0px / 0px;
+    overflow: hidden;
+    box-shadow: 0.5px 1px 2px hsla(0, 0%, 20%, 1);
+}
+</style>
+<div class="jumbotron">
+    <h1 class="display-3 text-center" style="padding-right: 0px;">Coupon and Promotions</h1>
+    <p class="lead text-center">Whenever you call, email, or text us just mention and of these and we will help you out.</p>
+</div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-md-offset-3">
-                <div class="panel panel-success coupon_success">
-                    <div class="panel-heading" id="head">
-                        <div class="col-md-12 panel-title" id="title">
-                            <span class="value">50% OFF</span>
-                            <span class="valuetext">Househouse</span>
+            <div class="container">
+                <div class="row">
+                    @foreach (var promotion in Model.Promotions)
+                    {
+                        <div class="col-md-4">
+                            <div class="card mb">
+                                <img class="card-img-top" src="@promotion.Image" alt="@promotion.Title">
+                                <div class="card-body mb">
+                                    <h5 class="card-title">@promotion.Title</h5>
+                                    <p class="card-text">@promotion.details</p>
+                                    <button type="button" class="btn btn-primary mb" href="/contact-us">Contact us</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="panel-body">
-                        <img src="http://www.prepbootstrap.com/Content/images/shared/coupontemplate/coupon_green.jpg" class="coupon-img img-rounded img-responsive">
-                        <div class="col-md-12">
-                            <ul class="items_success">
-                                <li>Offer availability may differ per store</li>
-                                <li>Only valid for existing supplies</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="disclosure_success">Offer may not be exchanged for cash value.</p>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="coupon_success_footertext">
-                            Code: <strong>ELEC</strong>3258
-                            <span class="print">
-                                <a href="#" class="btn btn-link coupon_success_footertext"><i class="fa fa-lg fa-print"></i> Print Coupon</a>
-                            </span>
-                        </div>
-                        <div class="coupon_success_footertext">Expires: Sep 30, 2016</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 col-md-offset-3">
-                <div class="panel panel-primary coupon_primary">
-                    <div class="panel-heading" id="head">
-                        <div class="col-md-12 panel-title" id="title">
-                            <span class="value">50% OFF</span>
-                            <span class="valuetext">Laptops & tablets</span>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <img src="http://www.prepbootstrap.com/Content/images/shared/coupontemplate/coupon_blue.jpg" class="coupon-img img-rounded img-responsive">
-                        <div class="col-md-12">
-                            <ul class="items_primary">
-                                <li>Offer availability may differ per store</li>
-                                <li>Only valid for existing supplies</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="disclosure_primary">Offer may not be exchanged for cash value.</p>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="coupon_primary_footertext">
-                            Code: <strong>LPTP</strong>2240
-                            <span class="print">
-                                <a href="#" class="btn btn-link coupon_primary_footertext"><i class="fa fa-lg fa-print"></i> Print Coupon</a>
-                            </span>
-                        </div>
-                        <div class="coupon_primary_footertext">Expires: June 01, 2016</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 col-md-offset-3">
-                <div class="panel panel-warning coupon_warning">
-                    <div class="panel-heading" id="head">
-                        <div class="col-md-12 panel-title" id="title">
-                            <span class="value">50% OFF</span>
-                            <span class="valuetext">Laptops & tablets</span>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <img src="http://www.prepbootstrap.com/Content/images/shared/coupontemplate/coupon_yellow.jpg" class="coupon-img img-rounded img-responsive">
-                        <div class="col-md-12">
-                            <ul class="items_warning">
-                                <li>Offer availability may differ per store</li>
-                                <li>Only valid for existing supplies</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="disclosure_warning">Offer may not be exchanged for cash value.</p>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="coupon_warning_footertext">
-                            Code: <strong>SMRTPH</strong>016
-                            <span class="print">
-                                <a href="#" class="btn btn-link coupon_warning_footertext"><i class="fa fa-lg fa-print"></i> Print Coupon</a>
-                            </span>
-                        </div>
-                        <div class="coupon_warning_footertext">Expires: May 01, 2016</div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
-    <style>
-        .coupon_success {
-            border: 2px dotted #336633;
-            border-radius: 10px;
-            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            font-weight: 100;
-            width: 500px;
-            margin: 20px;
-            background-color: #d1e9c7;
-        }
-
-            .coupon_success #head {
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                min-height: 50px;
-            }
-
-            .coupon_success > footer {
-                coupon_success-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                background-color: #d1e9c7;
-            }
-
-        .disclosure_success {
-            padding-top: 15px;
-            font-size: 11px;
-            color: #7a7979;
-            text-align: center;
-        }
-
-        .coupon_success_footertext {
-            color: #588944;
-            font-size: 12px;
-        }
-
-        .items_success {
-            margin: 0px 0px;
-            color: #336633;
-        }
-
-        .coupon_primary {
-            border: 2px dotted #9ec8ed;
-            border-radius: 10px;
-            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            font-weight: 100;
-            width: 500px;
-            margin: 20px;
-            background-color: #337ab7;
-        }
-
-            .coupon_primary #head {
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                min-height: 52px;
-                background-color: #337ab7;
-            }
-
-            .coupon_primary > footer {
-                coupon_primary-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                background-color: #337ab7;
-            }
-
-        .disclosure_primary {
-            padding-top: 15px;
-            font-size: 11px;
-            color: #214f77;
-            text-align: center;
-        }
-
-        .coupon_primary_footertext {
-            color: #337ab7;
-            font-size: 12px;
-        }
-
-        .items_primary {
-            margin: 0px 0px;
-            color: #9ec8ed;
-        }
-
-        .coupon_warning {
-            border: 2px dotted #f0ad4e;
-            border-radius: 10px;
-            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            font-weight: 100;
-            width: 500px;
-            margin: 20px;
-            background-color: #fbf6de;
-        }
-
-            .coupon_warning #head {
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                min-height: 52px;
-                background-color: #fbf6de;
-            }
-
-            .coupon_warning > footer {
-                coupon_warning-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                background-color: #fbf6de;
-            }
-
-        .disclosure_warning {
-            padding-top: 15px;
-            font-size: 11px;
-            color: #9b6f31;
-            text-align: center;
-        }
-
-        .coupon_warning_footertext {
-            color: #9b6f31;
-            font-size: 12px;
-        }
-
-        .items_warning {
-            margin: 0px 0px;
-            color: #9b6f31;
-        }
-
-        .print {
-            font-size: 14px;
-            float: right;
-        }
-
-        #title .visible-xs {
-            font-size: 14px;
-        }
-
-        .coupon_success #title img {
-            font-size: 30px;
-            height: 30px;
-            margin-top: 5px;
-        }
-
-        .coupon #title span {
-            float: right;
-            margin-top: 0px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .coupon-img {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 0;
-        }
-
-        .value {
-            font-size: 30px;
-            font-weight: 500;
-        }
-
-        .valuetext {
-            font-size: 20px;
-            font-weight: 400;
-        }
-
-        #business-info ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            text-align: center;
-        }
-
-            #business-info ul li {
-                display: inline;
-                text-align: center;
-            }
-
-                #business-info ul li span {
-                    text-decoration: none;
-                }
-
-                    #business-info ul li span i {
-                        padding-right: 5px;
-                    }
-    </style>

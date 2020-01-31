@@ -19,5 +19,27 @@ namespace PayLessPest
         {
 
         }
+
+        public void OnPost()
+        {
+            customerName = Request.Form["customerName"];
+            customerEmail = Request.Form["customerEmail"];
+            userMessage = Request.Form["message"];
+            reason = Request.Form["subject"];
+
+            if (reason == "na")
+                reason = "General Inquiry";
+
+            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason);
+            try
+            {
+                emailSend.send();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
+                    ex.ToString());
+            }
+        }
     }
 }

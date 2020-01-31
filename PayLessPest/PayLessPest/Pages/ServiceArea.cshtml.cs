@@ -9,6 +9,10 @@ namespace PayLessPest
 {
     public class ServiceAreaModel : PageModel
     {
+        public string customerEmail;
+        public string customerName;
+        public string reason;
+        public string userMessage;
         public void OnGet()
         {
 

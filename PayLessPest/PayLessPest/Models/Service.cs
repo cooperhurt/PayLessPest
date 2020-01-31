@@ -18,6 +18,9 @@ namespace PayLessPest.Models
 
         public List<string> features { get; set; }
 
+        public string innerHTML { get; set; }
+        public string headImage { get; set; }
+
 
     }
 }
