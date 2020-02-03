@@ -9,9 +9,40 @@ namespace PayLessPest
 {
     public class IndexModel : PageModel
     {
+        public string customerEmail;
+        public string customerName;
+        public string reason;
+        public string userMessage;
+        public string perferrContact;
+
         public void OnGet()
         {
 
+        }
+
+        public void OnPost()
+        {
+            customerName = Request.Form["customerName"];
+            customerEmail = Request.Form["customerEmail"];
+            userMessage = Request.Form["message"];
+            reason = Request.Form["subject"];
+            perferrContact = Request.Form["contactType"];
+
+            userMessage += "\n" + perferrContact;
+
+            if (reason == "na")
+                reason = "General Inquiry";
+
+            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason);
+            try
+            {
+                emailSend.send();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
+                    ex.ToString());
+            }
         }
     }
 }

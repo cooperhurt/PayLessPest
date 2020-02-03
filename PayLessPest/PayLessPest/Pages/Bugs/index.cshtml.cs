@@ -8,9 +8,15 @@ using PayLessPest.Models;
 
 namespace PayLessPest
 {
+
     public class indexModel : PageModel
     {
-
+        public string customerEmail;
+        public string customerName;
+        public string customerPhone;
+        public string reason;
+        public string userMessage;
+        public string perferredContact;
         public List<Bug> bugs;
         public Bug currentBug;
 
@@ -22,6 +28,31 @@ namespace PayLessPest
             if(bug != null)
             {
                 currentBug = bugs.Find(item => item.Name == bug);
+            }
+        }
+
+        public void OnPost()
+        {
+            customerName = Request.Form["customerName"];
+            customerEmail = Request.Form["customerEmail"];
+            userMessage = Request.Form["message"];
+            reason = Request.Form["subject"];
+            perferredContact = Request.Form["perferredContact"];
+
+            userMessage += "\n" + perferredContact;
+
+            if (reason == "na")
+                reason = "General Inquiry";
+
+            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason);
+            try
+            {
+                emailSend.send();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
+                    ex.ToString());
             }
         }
 
@@ -125,8 +156,24 @@ namespace PayLessPest
             Bug terminite = new Bug();
             terminite.Name = "Terminite";
             terminite.Descripition = "";
+            terminite.headerImage = "/img/bugs/terminite/header.jpg";
             terminite.ImagePath = "/img/bugs/terminite/terminite.jpg";
             terminite.CommonlyFound.Add("Salt Lake City");
+            terminite.CommonlyFound.Add("Ogden");
+            terminite.CommonlyFound.Add("Layton");
+            terminite.CommonlyFound.Add("Bountiful");
+            terminite.CommonlyFound.Add("Salt Lake City");
+            terminite.CommonlyFound.Add("Provo");
+            terminite.CommonlyFound.Add("West Valley City");
+
+            Bug terminite1 = new Bug();
+            terminite1.Name = "Termite";
+            terminite1.innerText = "These are one of the few pest you cannot put off, the sooner you treat the termites, the smaller damage to your property. It is estimate 1 out of every 5 " +
+                                    " houses have termites, and 20% will have them at some point. Treating them yourself is possible, difficult and ";
+            terminite1.ImagePath = "/img/bugs/terminite/terminite.jpg";
+
+            terminite.subType.Add(terminite1);
+
             bugs.Add(terminite);
             #endregion
 
@@ -136,6 +183,12 @@ namespace PayLessPest
             rodent.ImagePath = "/img/bugs/rodents/mouse.jpg";
             rodent.Descripition = "";
             rodent.CommonlyFound.Add("Salt Lake City");
+            rodent.CommonlyFound.Add("Ogden");
+            rodent.CommonlyFound.Add("Layton");
+            rodent.CommonlyFound.Add("Bountiful");
+            rodent.CommonlyFound.Add("Salt Lake City");
+            rodent.CommonlyFound.Add("Provo");
+            rodent.CommonlyFound.Add("West Valley City");
             bugs.Add(rodent);
             #endregion
 
@@ -145,16 +198,38 @@ namespace PayLessPest
             cockroach.Descripition = "";
             cockroach.ImagePath = "/img/bugs/cockroaches.jpg";
             cockroach.CommonlyFound.Add("Salt Lake City");
-            bugs.Add(cockroach);
 
+            Bug cocroach1 = new Bug();
+            cocroach1.Name = "Cockroach";
+            cocroach1.ImagePath = "/img/bugs/cockroaches.jpg";
+            cocroach1.innerText = "Aruguably one of the most known bugs for getting pest control, these gross creatures typically orginate from hotels, exteriror surrondings, dirty/waste areas. Typically " +
+                                    " we recommend getting professoinal treatment ASAP. With commerical grade spray and products it may still take several treatements to get rid of these pests.";
+            cockroach.subType.Add(cocroach1);
+
+            bugs.Add(cockroach);
             #endregion
 
-            #region
+            #region Box Elder
             Bug boxElderBug = new Bug();
             boxElderBug.Name = "Box Elder Bugs";
             boxElderBug.Descripition = "";
             boxElderBug.ImagePath = "/img/bugs/boxElder/box-elder-bugs.jpg";
             boxElderBug.CommonlyFound.Add("Salt Lake City");
+            boxElderBug.CommonlyFound.Add("Ogden");
+            boxElderBug.CommonlyFound.Add("Layton");
+            boxElderBug.CommonlyFound.Add("Bountiful");
+            boxElderBug.CommonlyFound.Add("Salt Lake City");
+            boxElderBug.CommonlyFound.Add("Provo");
+            boxElderBug.CommonlyFound.Add("West Valley City");
+
+            Bug boxElder = new Bug();
+            boxElder.Name = "Box Elder Bug";
+            boxElder.innerText = "These bugs are essentially harmless, but can quickly grow out of hand and require control. Typically these bugs" +
+                                " are identified with the birght organe and black body. Typically will see them in the summer, and towards fall/colder weather" +
+                                " they move inside and become more of a problem.";
+            boxElder.ImagePath =  "/img/bugs/boxElder/box-elder-bugs.jpg";
+
+            boxElderBug.subType.Add(boxElder);
             bugs.Add(boxElderBug);
             #endregion
         }

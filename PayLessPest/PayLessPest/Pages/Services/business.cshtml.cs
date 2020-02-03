@@ -16,6 +16,7 @@ namespace PayLessPest
         public string customerPhone;
         public string reason;
         public string userMessage;
+        public string perferredContact;
         public void OnGet()
         {
             currentService = new Service();
@@ -29,6 +30,10 @@ namespace PayLessPest
             customerEmail = Request.Form["customerEmail"];
             userMessage = Request.Form["message"];
             reason = Request.Form["subject"];
+            perferredContact = Request.Form["contactType"];
+
+            userMessage += "\n" + perferredContact;
+               
 
             if (reason == "na")
                 reason = "General Inquiry";
