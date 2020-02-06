@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Utah Pest Control";
+    ViewData["Meta"] = "Pay Less Pest Control is a family run buisness that has been open since 1989. We specialized in Pest Control ranging from spiders, wasp, bees, bed bugs, and more! Call, chat, or email us today.";
 }
 
 
@@ -161,75 +162,75 @@
         </div>
         <div class="row">
             <div class="col-xl-4 col-md-6 col-lg-4">
-                <a href="/bugs?bug=Bed%20Bugs"><div class="single_department">
+                <a aria-label="Bed Bugs" href="/bugs?bug=Bed%20Bugs"><div class="single_department">
                     <div class="department_thumb">
-                        <img src="~/img/bugs/bedBugs/bedBug.jpg" alt="">
+                        <img src="~/img/bugs/bedBugs/bedBug.jpg" alt="Bed Bug Pest Control">
                     </div>
                     <div class="department_content">
-                        <h3><a href="#">Bed Bugs</a></h3>
+                        <h3><a  aria-label="Bed Bug Pest Control" href="/bugs?bug=Bed%20Bugs">Bed Bugs</a></h3>
                         <p>Disgusting, yet treatable, click to learn more!</p>
-                        <a href="/bugs?bug=Bed%20Bugs" class="learn_more">Learn More</a>
+                        <a  aria-label="Bed Bugs"  href="/bugs?bug=Bed%20Bugs" class="learn_more">Learn More</a>
                     </div></a>
                 </div>
             </div>
             <div class="col-xl-4 col-md-6 col-lg-4">
-                <a href="/bugs?bug=Ant">
+                <a aria-label="Ants" href="/bugs?bug=Ant">
                     <div class="single_department">
                         <div class="department_thumb">
-                            <img src="~/img/bugs/ants/red-ant.jpg" alt="">
+                            <img src="~/img/bugs/ants/red-ant.jpg" alt="Ant Pest Control">
                         </div>
                         <div class="department_content">
-                            <h3><a href="/bugs?bug=Ant">Ants</a></h3>
+                            <h3><a  aria-label="Ant Pest Control"  href="/bugs?bug=Ant">Ants</a></h3>
                             <p>One of the more popular pest control items.</p>
-                            <a href="/bugs?bug=Ant" class="learn_more">Learn More</a>
+                            <a aria-label="Ant Pest Control"  href="/bugs?bug=Ant" class="learn_more">Learn More</a>
                         </div>
                     </div>
                     </a>    
             </div>
             <div class="col-xl-4 col-md-6 col-lg-4">
-                <a href="/bugs?bug=Spiders">
+                <a aria-label="Spiders" href="/bugs?bug=Spiders">
                     <div class="single_department">
                         <div class="department_thumb">
                             <img src="~/img/bugs/spiders.jpg" alt="Spider Pest Control">
                         </div>
                         <div class="department_content">
-                            <h3><a href="/bugs?bug=Spiders">Spiders</a></h3>
+                            <h3><a  aria-label="Spider Pest Control"  href="/bugs?bug=Spiders">Spiders</a></h3>
                             <p>Not sure what spider you have? Check out our list.</p>
-                            <a href="/bugs?bug=Spiders" class="learn_more">Learn More</a>
+                            <a  aria-label="Spider Pest Control"  href="/bugs?bug=Spiders" class="learn_more">Learn More</a>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-xl-4 col-md-6 col-lg-4">
-                <a href="/bugs?bug=Terminite">
+                <a aria-label="Termites" href="/bugs?bug=Termites">
                     <div class="single_department">
                         <div class="department_thumb">
                             <img src="~/img/bugs/terminite/terminite.jpg" alt="Terminite Pest Control">
                         </div>
                         <div class="department_content">
-                            <h3><a href="/bugs?bug=Terminite">Termites</a></h3>
+                            <h3><a  aria-label="Termite Pest Control"  href="/bugs?bug=Terminite">Termites</a></h3>
                             <p>Important you treat termites fast, get a quote.</p>
-                            <a href="/bugs?bug=Terminite" class="learn_more">Learn More</a>
+                            <a  aria-label="Terminite Pest Control"  href="/bugs?bug=Terminite" class="learn_more">Learn More</a>
                         </div>
                     </div>
                     </a>
             </div>
             <div class="col-xl-4 col-md-6 col-lg-4">
-                <a href="/bugs?bug=Rodent">
+                <a aria-label="Rodents" href="/bugs?bug=Rodent">
                     <div class="single_department">
                         <div class="department_thumb">
                             <img src="~/img/bugs/rodents/mouse.jpg" alt="Mouse and Rat Pest Control">
                         </div>
                         <div class="department_content">
-                            <h3><a href="/bugs?bug=Rodent">Rodents</a></h3>
+                            <h3><a  aria-label="Rodent Pest Control"  href="/bugs?bug=Rodent">Rodents</a></h3>
                             <p>From buisness to residental we cover it!</p>
-                            <a href="/bugs?bug=Rodent" class="learn_more">Learn More</a>
+                            <a  aria-label="Rodent4 Pest Control"  href="/bugs?bug=Rodent" class="learn_more">Learn More</a>
                         </div>
                     </div>
                     </a>
             </div>
             <div class="col-xl-4 col-md-6 col-lg-4">
-                <a href="/bugs">
+                <a aria-label="All Bugs" href="/bugs">
                     <div class="single_department">
                         <div class="department_thumb">
                             <img src="~/img/bugs/spiders.jpg" alt="All Treatable Bugs">
@@ -237,7 +238,7 @@
                         <div class="department_content">
                             <h3><a href="/bugs">Other common bugs/rodents</a></h3>
                             <p>We cover just about everything! Click to see other bugs!</p>
-                            <a href="#" class="learn_more">Learn More</a>
+                            <a href="/bugs" class="learn_more">Learn More</a>
                         </div>
                     </div>
                     </a>
@@ -263,7 +264,7 @@
                             <p>
                                 @if (review.ReviewText.Length > 300)
                                 {
-                                    @review.ReviewText.Substring(0, 300)
+                                    @review.ReviewText.Substring(0, 300) 
                                 }
                                 else
                                 {

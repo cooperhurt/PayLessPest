@@ -12,11 +12,12 @@ namespace PayLessPest
         public string customerName;
         public string customerEmail;
         public string userMessage;
+        public string userPhone;
         public string emailTitle;
         public string serviceType;
         public DateTime serviceDate;
 
-        public SendEmail(string customerName,string customerEmail,string userMessage,string emailTitle,string serviceType = "", DateTime? serviceDate= null)
+        public SendEmail(string customerName,string customerEmail,string userMessage,string emailTitle,string serviceType, DateTime serviceDate, string phone)
         {
 
             string sendTitle = serviceType == "" ? customerName + " " + emailTitle : customerName + " " + serviceType + " " + serviceDate + " " + emailTitle;
@@ -25,7 +26,8 @@ namespace PayLessPest
             this.userMessage = userMessage;
             this.emailTitle = sendTitle;
             this.serviceType = serviceType;
-            this.serviceDate = serviceDate ?? DateTime.MinValue;
+            this.serviceDate = serviceDate;
+            this.userPhone = phone;
         }
 
         public void send()

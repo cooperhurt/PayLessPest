@@ -11,6 +11,7 @@ namespace PayLessPest
     {
         public string customerEmail;
         public string customerName;
+        public string customerPhone;
         public string reason;
         public string userMessage;
         public string perferrContact;
@@ -22,18 +23,19 @@ namespace PayLessPest
 
         public void OnPost()
         {
-            customerName = Request.Form["customerName"];
-            customerEmail = Request.Form["customerEmail"];
+            customerName = Request.Form["name"];
+            customerEmail = Request.Form["email"];
             userMessage = Request.Form["message"];
             reason = Request.Form["subject"];
-            perferrContact = Request.Form["contactType"];
+            customerPhone = Request.Form["phone"];
+            perferrContact = Request.Form["perferredContact"];
 
-            userMessage += "\n" + perferrContact;
+            userMessage += "\n\nPerferred Contact: " + perferrContact;
 
             if (reason == "na")
                 reason = "General Inquiry";
 
-            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason);
+            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason,"General", new DateTime(),customerPhone);
             try
             {
                 emailSend.send();

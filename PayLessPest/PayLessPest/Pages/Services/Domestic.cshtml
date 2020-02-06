@@ -2,95 +2,127 @@
 @model PayLessPest.DomesticModel
 @{
     ViewData["Title"] = "Domestic";
+    ViewData["Meta"] = "It is never to late to forget about back where the garden tools, animals, or other valuable items are stored. Email, Chat, or call us today to get a free quote.";
 }
 
 <div class="jumbotron">
     <h1 class="display-3 text-center" style="padding-right: 0px;">Domestic Pest Control Services</h1>
-    <p class="lead text-center">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <p class="lead text-center">Don't forget about about back!</p>
     <p class="text-center"><a class="btn btn-lg btn-success" href="#contactForm" role="button">Request a Quote</a></p>
 </div>
 <div class="container">
 
 
-    <div class="jumbotron2 jumbotron-sm2">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-lg-12">
-                    <h1 class="h1">
-                        Contact us <small>Feel free to contact us</small>
-                    </h1>
+    <div class="container mt-5">
+        <div class="jumbotron2 jumbotron2-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <h1 class="h1">
+                            Contact us <small>Dont know what you need? Email us</small>
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-8" id="contactForm">
-        <div class="well well-sm contactForm">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name" asp-for="customerName">
-                                Name
-                            </label>
-                            <input type="text" class="form-control" id="name" name="customerName" placeholder="Enter name" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name" asp-for="customerPhone">
-                                Phone:
-                            </label>
-                            <input type="text" class="form-control" id="name" name="customerName" placeholder="Enter name" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email" asp-for="customerEmail">
-                                Email Address
-                            </label>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                </span>
-                                <input type="email" class="form-control" id="email" name="customerEmail" placeholder="Enter email" required="required" />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="well well-sm">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Name *
+                                    </label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        Email Address *
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-envelope"></span>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">
+                                        Phone Number
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-envelope"></span>
+                                        </span>
+                                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone #" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">
+                                        Subject*
+                                    </label>
+                                    <select id="subject" name="subject" class="form-control" required="required">
+                                        <option value="na" selected="">Choose One:</option>
+                                        <option value="Residential Service">Residential Services</option>
+                                        <option value="Business Service">Buisness Service</option>
+                                        <option value="Domestic Service">Domestic Service</option>
+                                        <option value="Other Services">Other Services</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="perferredContact">
+                                        Perferred Contact *
+                                    </label>
+                                    <select id="perferredContact" name="subject" class="form-control" required="required">
+                                        <option value="na" selected="">Choose One:</option>
+                                        <option value="Residential Service">Email</option>
+                                        <option value="Business Service">Phone Call</option>
+                                        <option value="Domestic Service">Text Message *(see side)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="userMessage">
+                                        Tell us about your pest problem *
+                                    </label>
+                                    <textarea name="message" id="message" class="form-control" rows="14" cols="25" required="required"
+                                              placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                    Send Message
+                                </button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Subject
-                            </label>
-                            <select id="subject" name="subject" class="form-control" required="required" asp-for="reason">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value="General Inquiry">General Customer Service</option>
-                                <option value="Request a Quote">Request a Quote</option>
-                                <option value="Service Question">Service Question</option>
-                                <option value="Other Question">Other Question</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Preferred Contact Back
-                            </label>
-                            <select id="subject" name="subject" class="form-control" required="required" asp-for="reason">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value="service">Phone call</option>
-                                <option value="suggestions">Email</option>
-                                <option value="product">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group ">
-                            <label for="name">
-                                Message
-                            </label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                      placeholder="Message" asp-for="userMessage"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                            Send Message
-                        </button>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+                    <address>
+                        <strong>PayLess Pest Control</strong><br>
+                        Servicing Utah Area<br>
+                        <abbr title="Phone">
+                            P:
+                        </abbr>
+                        801-809-7533
+                    </address>
+                    <address>
+                        <strong>Our Emails</strong><br>
+                        <a href="mailto:services@paylesspest.com">services@paylesspest.com</a>
+                    </address>
+
+                    <address>
+                        <strong>Text Message</strong>
+                        <p>Msg & data rates may apply - We do not cover this expense</p>
+                    </address>
+                </form>
+            </div>
         </div>
     </div>
 </div>

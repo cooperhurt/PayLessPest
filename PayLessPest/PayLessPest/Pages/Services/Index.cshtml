@@ -2,6 +2,7 @@
 @model PayLessPest.IndexModel
 @{
     ViewData["Title"] = "Our Services";
+    ViewData["Meta"] = "We have Pest Control services no matter what your need is rather it be residental, business, domestic, or year round services. All of these are our compeitive pricing and friendly staff! Chat, email, or call us today.";
 }
 
 <style>
@@ -154,7 +155,7 @@
                     <p>Protecting and helping the animals are curical to a healthly livestock. We capture racoons, skunks, and maintain rat control to keep them to a minimal.</p>
                     <i class="fa fa-home fa-5x " aria-hidden="true"></i><br />
                     <br />
-                    <a href=""><button class="btn btn-danger center-block text-white">Schedule Service/Quote</button></a>
+                    <a href="#contact"><button class="btn btn-danger center-block text-white">Schedule Service/Quote</button></a>
                 </div>
             </div>
             <div class="col-md-3">
@@ -162,14 +163,14 @@
                     <h3>All Season</h3>
                     <p>Our All Season services will put you on a weekly, bi-weekly, or montly service to prevent or treat pest control problems. Opt in whenever, and cancel whenever.</p>
                     <i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i><br />
-                    <a href=""><button class="btn btn-warning center-block">Schedule Service/Quote</button></a>
+                    <a href="#contact"><button class="btn btn-warning center-block">Schedule Service/Quote</button></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container mt-5">
+<div id="contact" class="container mt-5">
     <div class="jumbotron2 jumbotron2-sm">
         <div class="container">
             <div class="row">
@@ -184,14 +185,14 @@
     <div class="row">
         <div class="col-md-8">
             <div class="well well-sm">
-                <form>
+                <form method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name">
                                     Name *
                                 </label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                <input type="text" class="form-control" name="name" placeholder="Enter name" required="required" />
                             </div>
                             <div class="form-group">
                                 <label for="email">
@@ -201,18 +202,18 @@
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-envelope"></span>
                                     </span>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" />
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email" required="required" />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email">
+                                <label for="phone">
                                     Phone Number
                                 </label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-envelope"></span>
                                     </span>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email" />
+                                    <input type="tel" class="form-control" name="phone" placeholder="Enter Phone #" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -228,14 +229,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="subject">
+                                <label for="perferredContact">
                                     Perferred Contact *
                                 </label>
-                                <select id="contactType" name="subject" class="form-control" required="required">
+                                <select id="perferredContact" name="perferredContact" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
-                                    <option value="Residential Service">Email</option>
-                                    <option value="Business Service">Phone Call</option>
-                                    <option value="Domestic Service">Text Message *(see side)</option>
+                                    <option value="Email">Email</option>
+                                    <option value="Phone Call">Phone Call</option>
+                                    <option value="Text Message">Text Message *(see side)</option>
                                 </select>
                             </div>
                         </div>

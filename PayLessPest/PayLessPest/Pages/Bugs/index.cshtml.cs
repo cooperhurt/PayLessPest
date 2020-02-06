@@ -17,6 +17,9 @@ namespace PayLessPest
         public string reason;
         public string userMessage;
         public string perferredContact;
+        public string metaDesc;
+        public string phoneNumber;
+        public string bug;
         public List<Bug> bugs;
         public Bug currentBug;
 
@@ -25,26 +28,35 @@ namespace PayLessPest
             bugs = new List<Bug>();
 
             generateBugList();
-            if(bug != null)
+            if (bug != null)
             {
                 currentBug = bugs.Find(item => item.Name == bug);
+
+                metaDesc = currentBug == null ? metaDesc = "We offer pest control services for all of the common bugs in Utah including Bed Bugs, Box Elder Bugs, Ants, Termites, Rodents, bettles, or anything else you may have. Call, email or chat with us today." : currentBug.meta;
+            }
+            else
+            {
+                metaDesc = "We offer pest control services for all of the common bugs in Utah including Bed Bugs, Box Elder Bugs, Ants, Termites, Rodents, bettles, or anything else you may have. Call, email or chat with us today.";
             }
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            customerName = Request.Form["customerName"];
-            customerEmail = Request.Form["customerEmail"];
+            customerName = Request.Form["name"];
+            customerEmail = Request.Form["email"];
             userMessage = Request.Form["message"];
             reason = Request.Form["subject"];
             perferredContact = Request.Form["perferredContact"];
+            phoneNumber = Request.Form["phone"];
+            bug = Request.Form["bug"];
 
-            userMessage += "\n" + perferredContact;
+            userMessage += "\n\nPerferred Contact: " + perferredContact;
+
 
             if (reason == "na")
                 reason = "General Inquiry";
 
-            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason);
+            SendEmail emailSend = new SendEmail(customerName, customerEmail, userMessage, reason,"", new DateTime(),phoneNumber);
             try
             {
                 emailSend.send();
@@ -54,6 +66,7 @@ namespace PayLessPest
                 Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
                     ex.ToString());
             }
+            return bug == null ? Redirect("/bugs") : Redirect("/bugs?bug="+bug);
         }
 
         public void generateBugList()
@@ -72,6 +85,7 @@ namespace PayLessPest
             ant.CommonlyFound.Add("Provo");
             ant.CommonlyFound.Add("West Valley City");
             ant.headerImage = "/img/bugs/ants/header.jpg";
+            ant.meta = "Utah ants come in many different species, so know which type is important step to elminate your pest control service. Rather it be from carpenter ants, velvety ants paventment ants, or any other kind of ant we cover it. Call, email, or chat with us today.";
 
             Bug carpenter = new Bug();
             carpenter.Name = "Carpeneter Ants";
@@ -113,6 +127,7 @@ namespace PayLessPest
             bedBug.CommonlyFound.Add("Provo");
             bedBug.CommonlyFound.Add("West Valley City");
             bedBug.CommonlyFound.Add("Throughout Utah");
+            bedBug.meta = "Bed bugs are commony in 1 in 5 houses in Utah, yet one of the more difficult things to extermite DYI. Our professional services can help eliminate your bed bug problem. Call, email, or chat with us today.";
 
             Bug bedBugI = new Bug();
             bedBugI.Name = "Bed Bug";
@@ -140,6 +155,7 @@ namespace PayLessPest
             spiders.CommonlyFound.Add("Salt Lake City");
             spiders.CommonlyFound.Add("Provo");
             spiders.CommonlyFound.Add("West Valley City");
+            spiders.meta = "Utah is home to over 600 species of spiders, and some are dangerous some aren't. Our pest control services can help solve or prevent your spider problem at your home or business. Call, email, or chat today.";
 
             Bug subSpider = new Bug();
 
@@ -152,9 +168,9 @@ namespace PayLessPest
             bugs.Add(spiders);
             #endregion
 
-            #region termite
+            #region Termites
             Bug terminite = new Bug();
-            terminite.Name = "Terminite";
+            terminite.Name = "Termites";
             terminite.Descripition = "";
             terminite.headerImage = "/img/bugs/terminite/header.jpg";
             terminite.ImagePath = "/img/bugs/terminite/terminite.jpg";
@@ -165,6 +181,7 @@ namespace PayLessPest
             terminite.CommonlyFound.Add("Salt Lake City");
             terminite.CommonlyFound.Add("Provo");
             terminite.CommonlyFound.Add("West Valley City");
+            terminite.meta = "Termites can be very harmful not to you but your house. If you have termites you should not put it off. Our competitive pricing can help solve your termitie pest control problem. Call, email, or chat with ust today!";
 
             Bug terminite1 = new Bug();
             terminite1.Name = "Termite";
@@ -181,6 +198,7 @@ namespace PayLessPest
             Bug rodent = new Bug();
             rodent.Name = "Rodent";
             rodent.ImagePath = "/img/bugs/rodents/mouse.jpg";
+            rodent.headerImage = "/img/bugs/rodents/header.jpg";
             rodent.Descripition = "";
             rodent.CommonlyFound.Add("Salt Lake City");
             rodent.CommonlyFound.Add("Ogden");
@@ -189,6 +207,14 @@ namespace PayLessPest
             rodent.CommonlyFound.Add("Salt Lake City");
             rodent.CommonlyFound.Add("Provo");
             rodent.CommonlyFound.Add("West Valley City");
+            rodent.meta = "Utah mouse and rats can be hard to control or prevent, our professional services can help solve your rodent problem. Call, chat, or email us today.";
+
+            Bug rodent1 = new Bug();
+            rodent1.Name = "Rodent/Mous";
+            rodent1.ImagePath = "/img/bugs/rodents/mouse.jpg";
+            rodent1.innerText = "Probably the most well known pest that people think of when it comes to Pest Control. These creates typically come from dirty areas, or leaving things out. While 1-2 can be handled they can quickly grow out of hand. " +
+                                "They can cause damange to just about anything by including couches, chairs, carpet, and anything else.";
+
             bugs.Add(rodent);
             #endregion
 
@@ -197,7 +223,15 @@ namespace PayLessPest
             cockroach.Name = "Cockroaches";
             cockroach.Descripition = "";
             cockroach.ImagePath = "/img/bugs/cockroaches.jpg";
+            cockroach.headerImage = "/img/bugs/cokroaches.jpg";
             cockroach.CommonlyFound.Add("Salt Lake City");
+            cockroach.CommonlyFound.Add("Ogden");
+            cockroach.CommonlyFound.Add("Layton");
+            cockroach.CommonlyFound.Add("Bountiful");
+            cockroach.CommonlyFound.Add("Salt Lake City");
+            cockroach.CommonlyFound.Add("Provo");
+            cockroach.CommonlyFound.Add("West Valley City");
+            cockroach.meta = "Cockroaches are one of those things that typically come from an outside source, and are known for being gross. We specialize in cockraoch pest control, call, email, or chat with us today to learn more.";
 
             Bug cocroach1 = new Bug();
             cocroach1.Name = "Cockroach";
@@ -221,6 +255,7 @@ namespace PayLessPest
             boxElderBug.CommonlyFound.Add("Salt Lake City");
             boxElderBug.CommonlyFound.Add("Provo");
             boxElderBug.CommonlyFound.Add("West Valley City");
+            boxElderBug.meta = "Box Elder Bugs in Utah are very common, and typically are harmless. It is possible towrads winter or late summer as they move inside they can become a pest. Our services can help solve that problem, call, email, or chat with us today.";
 
             Bug boxElder = new Bug();
             boxElder.Name = "Box Elder Bug";
